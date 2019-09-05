@@ -1,0 +1,12 @@
+<h1>Lookup User</h1>
+
+<%= form_with do |form| %>
+	<%= form.text_field :name %>
+	<%= form.submit "Search" %>
+<% end %>
+
+<%if @tweets %>
+	<% @tweets.each do |tweet| %>
+		<p><%= tweet.created_at %>: <%= tweet.text %></p>
+	<% end %>
+<% end %>

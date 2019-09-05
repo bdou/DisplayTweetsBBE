@@ -1,3 +1,9 @@
+<% if @error %>
+	<div class="alert alert-danger" role="alert">
+		<%= @error %>
+	</div>
+<% end %>
+
 <h1>Lookup User</h1>
 
 <%= form_with do |form| %>
@@ -5,7 +11,7 @@
 	<%= form.submit "Search" %>
 <% end %>
 
-<%if @tweets %>
+<% if @tweets %>
 	<% @tweets.each do |tweet| %>
 		<p><%= tweet.created_at %>: <%= tweet.text %></p>
 	<% end %>
